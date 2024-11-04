@@ -1,0 +1,89 @@
+@charset "utf-8";
+// =============================================================================
+// PC、SPの表示切り替え
+// =============================================================================
+.se,
+.sp,
+.tab,
+.note {
+  display: none;
+}
+.pc {
+  display: block;
+}
+
+.se {
+  @include pc {
+    display: none;
+  }
+  @include tab {
+    display: none;
+  }
+  @include sp {
+    display: none;
+  }
+  @include se {
+    display: block;
+  }
+}
+
+.sp {
+  @include pc {
+    display: none;
+  }
+  @include tab {
+    display: none;
+  }
+  @include sp {
+    display: block;
+  }
+}
+
+.tab {
+  @include pc {
+    display: none;
+  }
+  @include tab {
+    display: block;
+  }
+  @include sp {
+    display: none;
+  }
+}
+
+.note {
+  @include sp {
+    display: none;
+  }
+  @include tab {
+    display: none;
+  }
+  @include note {
+    display: block;
+  }
+}
+
+.pc {
+  @include pc {
+    display: block;
+  }
+  @include tab {
+    display: block;
+  }
+  @include sp {
+    display: none;
+  }
+}
+
+// PCのみ改行
+.br-pc {
+  @include pc {
+    display: block;
+  }
+  @include tab {
+    display: none;
+  }
+  @include sp {
+    display: none;
+  }
+}

@@ -1,0 +1,11 @@
+@charset "utf-8";
+//_color.scss
+
+//グラデーション
+@mixin grad_normal {
+  background: linear-gradient(to right, #00c0fa 0%, #005eea 100%);
+}
+
+
+$primary: #202265;
+$secondary: #C41A30;

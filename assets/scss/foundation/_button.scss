@@ -1,0 +1,607 @@
+.button {
+    display: inline-block;
+    width: 500px;
+    height: 200px;
+    border: none;
+    background-color: #fff;
+    position: relative;
+    // background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(26,26,26,1) 70%, rgba(44,44,44,1) 100%);
+    background-color: transparent;
+    color: #fff;
+    font-size: 17px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.t-l, .t-r, .b-l, .b-r {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+    animation-duration: 300ms;
+
+}
+.t-l::after, .t-r::after, .b-l::after, .b-r::after, .t-l::before, .t-r::before, .b-l::before, .b-r::before {
+    display: inline-block;
+    content: "";
+    position: absolute;
+    color: #E66A00;
+    background-color: #E66A00;
+    transition-duration: 300ms;
+}
+.t-l::after, .t-r::after {
+    top: 5px;
+    width: 3px;
+    height: 10px;
+}
+.t-l::before, .t-r::before {
+    top: 5px;
+    width: 10px;
+    height: 3px;
+}
+.t-l::before, .t-l::after {
+    left: 5px;
+}
+.t-r::before, .t-r::after {
+    right: 5px;
+}
+
+.b-l::after, .b-r::after{
+    bottom: 5px;
+    height: 3px;
+    width: 10px;
+}
+.b-l::before, .b-r::before {
+    bottom: 5px;
+    height: 10px;
+    width: 3px;
+}
+.b-l::after, .b-l::before {
+    left: 5px;
+}
+.b-r::after, .b-r::before {
+    right: 5px;
+}
+.button:hover .b-r::after {
+    width: 100%;
+    opacity: 0;
+}
+
+.button:hover .btn-1 {
+    opacity: 0.7;
+}
+
+.tl-sm::after, .tr-sm::after {
+    top: 5px;
+    width: 2px;
+    height: 13px;
+}
+.tl-sm::before, .tr-sm::before {
+    top: 5px;
+    width: 13px;
+    height: 2px;
+}
+.tl-sm::before, .tl-sm::after {
+    left: 5px;
+}
+.tr-sm::before, .tr-sm::after {
+    right: 5px;
+}
+
+.bl-sm::after, .br-sm::after{
+    bottom: 5px;
+    height: 2px;
+    width: 13px;
+}
+.bl-sm::before, .br-sm::before {
+    bottom: 5px;
+    height: 13px;
+    width: 2px;
+}
+.bl-sm::after, .bl-sm::before {
+    left: 5px;
+}
+.br-sm::after, .br-sm::before {
+    right: 5px;
+}
+
+.tl-nm::after, .tr-nm::after {
+    top: 5px;
+    width: 2px;
+    height: 15px;
+}
+.tl-nm::before, .tr-nm::before {
+    top: 5px;
+    width: 15px;
+    height: 2px;
+}
+.tl-nm::before, .tl-nm::after {
+    left: 5px;
+}
+.tr-nm::before, .tr-nm::after {
+    right: 5px;
+}
+
+.bl-nm::after, .br-nm::after{
+    bottom: 5px;
+    height: 2px;
+    width: 15px;
+}
+.bl-nm::before, .br-nm::before {
+    bottom: 5px;
+    height: 15px;
+    width: 2px;
+}
+.bl-nm::after, .bl-nm::before {
+    left: 5px;
+}
+.br-nm::after, .br-nm::before {
+    right: 5px;
+}
+
+
+.button:hover .b-l::before {
+    height: 100%;
+    opacity: 0;
+}
+
+.btn-1 {
+    position: relative;
+    width: 287px;
+    height: 60px;
+}
+
+.btn-1:hover {
+    opacity: 0.7;
+}
+
+.btn-4:hover {
+    opacity: 0.7;
+}
+
+.btn-1::after {
+    content: "";
+    background: url("arrow2.png") no-repeat center/contain;
+    left: 50%;
+    bottom: 7px;
+    transform: translateX(-50%);
+    width: 7px;
+    height: 7px;
+    position: absolute;
+}
+
+.btn-1:hover::after {
+    bottom: 5px;
+    transition-duration: 300ms;
+}
+
+.btn-2 {
+    background: none;
+    border: 1px solid #ffffff;
+    transition-duration: 300ms;
+    cursor: pointer;
+    position: relative;
+    width: 220px;
+    height: 57px;
+    @include sp {
+        width: 100%;
+        height: 7.4rem;
+    }
+}
+
+.btn-2:hover {
+    border-color: #C5DB00;
+    transition-duration: 200ms;
+    background-color: rgb(197, 219, 0, 0.2);
+}
+
+.btn-2:hover::after {
+    right: 10px;
+    transition-duration: 200ms;
+}
+
+.btn-2::after {
+    content: "";
+    background: url("../images/arrow1.png") no-repeat center/contain;
+    top: 50%;
+    right: 13px;
+    transform: translateY(-50%);
+    width: 13px;
+    height: 13px;
+    position: absolute;
+    @include sp {
+        width: 1.7rem;
+        height: 1.6rem;
+    }
+}
+
+.btn-4 {
+    width: 591px;
+    height: 138px;
+    font-size: 21px;
+    position: relative;
+}
+.btn-4::after {
+    content: "";
+    background: url("../images/arrow1.png") no-repeat center/contain;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    position: absolute;
+}
+
+.btn-4::before {
+    content: "PRODUCT";
+    left: 50%;
+    top: 6px;
+    transform: translateX(-50%);
+    position: absolute;
+    font-size: 91px;
+    opacity: 0.2;
+
+}
+
+.no-before::before {
+    display: none;
+}
+
+.btn-4:hover::after {
+    right: 13px;
+    transition-duration: 300ms;
+}
+
+.btn-5 {
+    // width: 1326px;
+    overflow: hidden;
+    width: 97%;
+    height: 42rem;
+    font-size: 188px;
+    position: relative;
+    background: transparent;
+    @include big-pc {
+        height: 57.5rem;
+        font-size: 25.8rem;
+    }
+    @include sp {
+        font-size: 45px;
+        height: 12rem;
+        width: 95%;
+        // padding: 4.5rem 12rem;
+    }
+}
+
+.btn-5::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: #E66A00;
+    transition: .4s ease;
+    display: block;
+    z-index: 1;
+    width: 0;
+    height: 500%;
+}
+
+.btn-5:hover::after {
+    width: 105%;
+    opacity: 0;
+}
+
+.contact-btn-txt {
+    position: relative;
+}
+
+.contact-btn-txt::after {
+    content: "";
+    background: url("../images/arrow1.png") no-repeat center/contain;
+    top: 50%;
+    right: -20px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    z-index: 1;
+    @include big-pc {
+        width: 2.6rem;
+        height: 2.8rem;
+    }
+    @include sp {
+        right: 5px;
+    }
+}
+@include sp {
+    .text::after {
+        content: "";
+        background: url("../images/arrow1.png") no-repeat center/contain;
+        top: 50%;
+        right: 190px;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        opacity: 1;
+        @include sp {
+            right: 5px;
+        }
+    }
+}
+.btn-5:hover .contact-btn-txt::after {
+    right: -25px;
+    transition-duration: 300ms;
+}
+@include sp {
+    .btn-5:hover .text::after {
+        right: 175px;
+        transition-duration: 300ms;
+    }
+}
+
+.btn-3 {
+    width: 310px;
+    // height: 190px;
+}
+
+.grey::after, .grey::before {
+    background-color: #5D5D5D ;
+}
+.btn-6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #A1A1A5;
+    color: #5D5D5D;
+    border: none;
+    width: 22rem;
+    height: 5.7rem;
+    font-size: 1.7rem;
+    @include sp {
+        width: 100%;
+    }
+}
+
+.btn-3:hover .bl::before, 
+.btn-3:hover .br::before, 
+.btn-3:hover .tl::before, 
+.btn-3:hover .tr::before, 
+.btn-3:hover .bl::after, 
+.btn-3:hover .br::after, 
+.btn-3:hover .tl::after, 
+.btn-3:hover .tr::after {
+    opacity: 1 !important;
+}
+
+.tl::after, .tr::after {
+    top: -2px;
+    width: 2px;
+    height: 10px;
+}
+ .tl::before, .tr::before {
+    top: -2px;
+    width: 10px;
+    height: 2px;
+}
+ .tl::before, .tl::after {
+    left: -2px;
+}
+ .tr::before, .tr::after {
+    right: -2px;
+}
+
+ .bl::after, .br::after{
+    bottom: -2px;
+    height: 2px;
+    width: 10px;
+}
+ .bl::before, .br::before {
+    bottom: -2px;
+    height: 10px;
+    width: 2px;
+}
+ .bl::after, .bl::before {
+    left: -2px;
+}
+ .br::after, .br::before {
+    right: -2px;
+}
+
+//////
+.btn-3:hover .bl::before, 
+.btn-3:hover .br::before, 
+.btn-3:hover .tl::before, 
+.btn-3:hover .tr::before, 
+.btn-3:hover .bl::after, 
+.btn-3:hover .br::after, 
+.btn-3:hover .tl::after, 
+.btn-3:hover .tr::after {
+    opacity: 1 !important;
+}
+
+.tl-inset::after, .tr-inset::after {
+    top: 0;
+    width: 2px;
+    height: 14px;
+}
+ .tl-inset::before, .tr-inset::before {
+    top: 0px;
+    width: 14px;
+    height: 2px;
+}
+ .tl-inset::before, .tl-inset::after {
+    left: 0px;
+}
+ .tr-inset::before, .tr-inset::after {
+    right: 0px;
+}
+
+ .bl-inset::after, .br-inset::after{
+    bottom: 0px;
+    height: 2px;
+    width: 14px;
+}
+ .bl-inset::before, .br-inset::before {
+    bottom: 0px;
+    height: 14px;
+    width: 2px;
+}
+ .bl-inset::after, .bl-inset::before {
+    left: 0px;
+}
+ .br-inset::after, .br-inset::before {
+    right: 0px;
+}
+
+.button:hover .t-l:before {
+    width: 100%;
+    opacity: 0;
+}
+.button:hover .t-r::after {
+    height: 100%;
+    opacity: 0;
+}
+
+
+.button:hover .b-r::before {
+    opacity: 0;
+}
+
+.button:hover .b-l::after {
+    opacity: 0;
+}
+
+.button:hover .t-l::after {
+    opacity: 0;
+}
+.button:hover .t-r::before {
+    opacity: 0;
+}
+
+.effect-txt {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: #fff;
+    position: relative;
+    /* background: linear-gradient(180deg, rgba(214,197,125,1) 0%, rgba(223,129,36,1) 70%, rgba(230,106,0,1) 100%); */
+    background: url("../images/contact-bg.png") no-repeat center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    @include sp {
+        opacity: 1;
+    }
+}
+
+.txt-note {
+    font-size: 19px;
+    background-color: black;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0px 4px 2px 4px;
+    z-index: 1;
+    @include big-pc {
+        font-size: 2.6rem;
+    }
+    @include sp {
+        font-size: 14px;
+    }
+}
+
+.button:hover .effect-txt {
+    opacity: 1;
+    transition-duration: 100ms;
+    transition-delay: 200ms;
+    // animation-delay: 900ms;
+    /*delay animation*/
+}
+
+.button:hover .text {
+    font-size: 188px; /* Kích thước chữ rất lớn để phù hợp với màn hình */
+    color: transparent; /* Làm chữ trong suốt */
+    -webkit-text-stroke: 1px white; /* Tạo đường viền màu trắng */
+    text-align: center;
+    @include big-pc {
+        font-size: 25.8rem;
+    }
+    @include sp {
+        font-size: 60px;
+    }
+}
+
+.text {
+    position: relative;
+}
+
+@include sp {
+    .text {
+        color: transparent; /* Làm chữ trong suốt */
+        -webkit-text-stroke: 1px white; /* Tạo đường viền màu trắng */
+        text-align: center;
+        font-size: 75px;
+    }
+}
+
+.effect-bg {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    /* background: linear-gradient(180deg, rgba(214,197,125,1) 0%, rgba(223,129,36,1) 70%, rgba(230,106,0,1) 100%); */
+    background-color: #E66A00;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.arrow-after {
+    position: relative;
+}
+
+.arrow-after::after {
+    content: '';
+    position: absolute;
+    bottom: -6rem;
+    right: 1rem;
+    width: 18px;
+    height: 19px;
+    background: url("../images/arrow1.png") no-repeat center/contain;
+    @include sp {
+        bottom: -5.7rem;
+    }
+}
+
+.btn-3:hover .arrow-after::after {
+    right: 0.5rem;
+    transition-duration: 300ms;
+}
+
+.effect-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.button:hover img {
+    transform: scale(1.1);
+    transition: 0.5s;
+    opacity: 0.2;
+}

@@ -1,0 +1,924 @@
+.main-puerisomnia {
+    position: relative;
+    overflow: hidden;
+    .banner-menu .menu-list .menu-item a.active {
+        color: #CFE600;
+    }
+    .banner-menu .menu-list .menu-item a.active::after {
+        width: 150%;
+        transition-duration: 400ms;
+    }
+    .grey-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+        background-color: #96969A;
+    }
+    .puerisomnia-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        background: url("../images/background-main.png") no-repeat top/cover;
+        width: 100%;
+        height: 49%;
+        @include sp {
+            width: 130%;
+            left: -10rem;
+            height: 18.5%;
+        }
+    }
+    .puerisomnia-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 170.4rem;
+        background: linear-gradient(180deg, rgba(28,30,31,1) 0%, rgba(36,37,38,0.93) 35%, rgba(50,51,51,0.78) 65%, rgba(78,78,77,0.5) 85%, rgba(129,126,123,0) 100%);
+    }
+    .layer-bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: url("../images/intro-bg.png") no-repeat top/cover;
+        z-index: -1;
+        width: 136.6rem;
+        height: 107.4rem;
+        @include big-pc {
+            height: 150rem;
+            width: 192rem;
+        }
+        @include sp {
+            width: 100%;
+            height: 85rem;
+        }
+    }
+    .container {
+        max-width: 104rem;
+        padding: 0 2rem;
+        margin: 0 auto;
+        @include sp {
+            padding: 0 20px;
+        }
+    }
+    .banner {
+        height: 76.8rem;
+        position: relative;
+        @include big-pc {
+            height: 93rem;
+        }
+        @include sp {
+            height: 52.5rem;
+        }
+        &-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #1e1e1e;
+            z-index: -1;
+        }
+        &__title {
+            .title-img {
+                position: absolute;
+                left: 8.5rem;
+                bottom: 11.7rem;
+                @include big-pc {
+                    left: 13.5rem;
+                    width: 87.7rem;
+                    height: 34.1rem;
+                }
+                @include sp {
+                    left: 2.4rem;
+                    bottom: 13rem;
+                    width: 32.5rem;
+                    height: 12.2rem;
+                }
+            }
+        }
+        &-menu {
+            position: fixed;
+            right: 2.5rem;
+            bottom: 13rem;
+            z-index: 3;
+            @include big-pc {
+                bottom: 36rem;
+            }
+            @include sp {
+                display: none;
+            }
+            .menu-list {
+                text-align: right;
+                .menu-item {
+                    font-size: 1.4rem;
+                    font-weight: bold;
+                    position: relative;
+                    &__line {
+                        position: relative;
+                    }
+                    &__line::after {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        right: -1.5rem;
+                        transform: translateY(-50%);
+                        width: 0.6rem;
+                        height: 0.1rem;
+                        background-color: #E66A00;
+                    }
+                }
+                .menu-item:not(:first-child) {
+                    margin-top: 1.5rem;
+                }
+                // .menu-item::after {
+                    // content: "";
+                    // position: absolute;
+                    // top: 50%;
+                    // right: -1.5rem;
+                    // transform: translateY(-50%);
+                    // width: 0.6rem;
+                    // height: 0.1rem;
+                    // background-color: #E66A00;
+                // }
+                
+            }
+
+        }
+        &__note {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 83%;
+            @include sp {
+                width: 150%;
+            }
+            .note-content {
+                position: relative;
+                padding: 0.5rem 0rem 1.5rem 8.3rem;
+                // background-color: #BB5804;
+                @include big-pc {
+                    padding: 0.5rem 0rem 0rem 8.3rem;
+                }
+                @include sp {
+                    background-color: #BB5804;
+                    padding: 1rem 0rem 0.5rem 2rem;
+                }
+                color: #fff;
+                .pickup {
+                    position: relative;
+                    z-index: 1;
+                    font-size: 1.8rem;
+                    padding-right: 2.1rem;
+                    @include big-pc {
+                        font-size: 2.4rem;
+                    }
+                    @include sp {
+                        position: absolute;
+                        top: -2rem;
+                        left: 2rem;
+                        font-size: 2.2rem;
+
+                    }
+                }
+                .date {
+                    opacity: 0.7;
+                }
+                .info {
+                    position: relative;
+                    z-index: 1;
+                    font-size: 1.4rem;
+                    @include big-pc {
+                        font-size: 1.9rem;
+                    }
+                    @include sp {
+                        font-size: 1.3rem;
+                    }
+                }
+            }
+            .note-content::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-right: 28px solid transparent;
+                border-top: 45px solid #BB5804;
+                z-index: 0;
+                @include big-pc {
+                    border-top: 50px solid #BB5804;
+                }
+                @include sp {
+                    content: none;
+                }
+            }
+            .note-content::after {
+                content: "";
+                position: absolute;
+                top: 45%;
+                right: 13rem;
+                transform: translateY(-45%);
+                width: 1.1rem;
+                height: 1.3rem;
+                background: url("../images/arrow-white.svg") no-repeat center/contain;
+                // background-color: #BB5804;
+                z-index: 1;
+                @include big-pc {
+                    top: 55%;
+                    right: 13rem;
+                    transform: translateY(-55%);
+                    width: 1.5rem;
+                    height: 1.7rem;
+                }
+                @include sp {
+                    content: none;
+                }
+            }
+        }
+    }
+    .banner::before {
+        content: "";
+        position: absolute;
+        top: -3rem;
+        left: -3rem;
+        width: 28.5rem;
+        height: 31rem;
+        background: url("../images/background-top-left.png") no-repeat top/cover;
+        opacity: 0.5;
+        @include big-pc {
+            width: 39.2rem;
+            height: 42.5rem;
+        }
+        @include sp {
+            width: 20rem;
+            height: 21rem;
+        }
+    }
+
+
+    @keyframes move {
+        0% {
+            -webkit-clip-path: inset(0 100% 0 0);
+            clip-path: inset(0 100% 0 0)
+        }
+        100% {
+            -webkit-clip-path: inset(0);
+            clip-path: inset(0);
+        }
+    }
+
+    .intro__btn {
+        display: inline-block;
+        padding: 1.5rem 4.5rem 1.7rem;
+        border: 1px solid white;
+    }
+    .btn-center {
+        margin: 0 auto;
+    }
+    .btn-right {
+        margin-left: auto;
+    }
+
+    .intro {
+        position: relative;
+        padding: 20rem 0 6rem;
+        overflow: hidden;
+        @include big-pc {
+            padding: 20rem 0 25rem;
+            overflow: visible;
+        }
+        @include sp {
+            padding: 6rem 0 70rem;
+            overflow: visible;
+        }
+        &__title {
+            .title-img {
+                width: 84rem;
+                height: 14.5rem;
+                margin: 0 auto 10.4rem;
+                display: block;
+                @include big-pc {
+                    width: 115.5rem;
+                    height: 20rem;
+                    margin-bottom: 14rem;
+                }
+                @include sp {
+                    width: 32.9rem;
+                    margin-bottom: 5.1rem;
+                }
+            }
+        }
+        &__content {
+            position: relative;
+            .intro-doc {
+                position: relative;
+                z-index: 1;
+                &__title {
+                    .doc-til {
+                        animation: move 1.5s ease forwards;
+                        background-color: black;
+                        display: inline-block;
+                        margin-bottom: 1rem;
+                    }
+                    .title {
+                        font-size: 5.6rem;
+                        font-weight: bold;
+                        animation: move 1.5s ease forwards;
+                        -webkit-clip-path: inset(0 100% 0 0);
+                        clip-path: inset(0 100% 0 0);
+                        display: inline-block;
+                        line-height: 1.5;
+                        position: relative;
+                        animation-delay: .3s;
+                        @include sp {
+                            font-size: 2.9rem;
+                        }
+                    }
+                }
+                &__des {
+                    padding-top: 7.2rem;
+                    font-weight: bold;
+                    line-height: 2.4;
+                    margin-bottom: 8.5rem;
+                    @include sp {
+                        padding-top: 3.7rem;
+                        font-size: 1.6rem;
+                        margin-bottom: 3rem;
+                    }
+                }
+            }
+            .intro-image{
+                position: absolute;
+                top: 0rem;
+                right: -30rem;
+                width: 95.5rem;
+                height: 76.3rem;
+                @include big-pc {
+                    top: 8rem;
+                    right: -60rem;
+                    width: 116.2rem;
+                    height: 92.8rem;
+                }
+                @include sp {
+                    left: 50%;
+                    transform: translateX(-50%);
+                    top: 125%;
+                    width: 62.6rem;
+                    height: 50rem;
+                }
+                .intro-img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+
+    }
+
+    .intro::after {
+        content: "";
+        position: absolute;
+        top: 18.5rem;
+        left: -10rem;
+        width: 35.7rem;
+        height: 115.7rem;
+        background: url("../images/intro-bg2.png") no-repeat top/cover;
+        z-index: 1;
+        @include big-pc {
+            width: 49.4rem;
+            height: 160.1rem;
+        }
+        @include sp {
+            top: 13rem;
+            left: -4rem;
+            height: 56.8rem;
+            width: 17.5rem;
+        }
+    }
+
+    .service {
+        position: relative;
+        @include sp {
+            padding-bottom: 60rem;
+        }
+        &-image {
+            position: absolute;
+            top: -7.5rem;
+            left: -8.5rem;
+            width: 83.5rem;
+            height: 101.6rem;
+            @include big-pc {
+                top: -26rem;
+                left: -6.5rem;
+                width: 101.5rem;
+                height: 123.5rem;
+            }
+            @include sp {
+                top: 19%;
+                left: 50%;
+                transform: translateX(-50% );
+                width: 53.5rem;
+                height: 62.9rem;
+            }
+            .service-img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        &-doc {
+            text-align: right;
+            @include sp {
+                text-align: center;
+            }
+            .service-title {
+                font-size: 21.4rem;
+                line-height: 1;
+                position: relative;
+                @include sp {
+                    font-size: 8rem;
+                }
+            }
+            .service-title::after {
+                content: '何ができるのか？';
+                position: absolute;
+                bottom: -2.5rem;
+                right: 0;
+                font-size: 5.6rem;
+                line-height: 1.2;
+                font-weight: bold;
+                background-color: #1e1e1e;
+                @include sp {
+                    font-size: 2.9rem;
+                    right: -2rem;
+                }
+            }
+            &__des {
+                font-weight: bold;
+                margin-bottom: 5rem;
+                padding-top: 9.5rem;
+                @include sp {
+                    margin-bottom: 3rem;
+                    padding-top: 3.7rem;
+                }
+            }
+        }
+
+    }
+    .product {
+        position: relative;
+        padding-bottom: 30rem;
+        overflow: hidden;
+        @include big-pc {
+            padding-bottom: 62rem;
+        }
+        @include sp {
+            padding-bottom: 55rem;
+            overflow: visible;
+        }
+        &-image {
+            position: absolute;
+            top: 11rem;
+            right: -8.5rem;
+            width: 83.5rem;
+            height: 101.6rem;
+            z-index: -1;
+            @include big-pc {
+                top: 7rem;
+                right: -7.5rem;
+                width: 101.5rem;
+                height: 123.5rem;
+            }
+            @include sp {
+                top: 60%;
+                left: 50%;
+                transform: translate(-50% , -50%);
+                width: 52.5rem;
+                height: 63.9rem;
+            }
+            .product-img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        &-doc {
+            @include sp {
+                text-align: center;
+            }
+            .product-title {
+                font-size: 21.4rem;
+                position: relative;
+                padding-top: 30rem;
+                @include sp {
+                    padding-top: 5rem;
+                    font-size: 7rem;
+                }
+            }
+            .product-title::after {
+                content: '何ができるのか？';
+                position: absolute;
+                bottom: 5rem;
+                left: 0;
+                font-size: 5.6rem;
+                line-height: 1.2;
+                font-weight: bold;
+                background-color: #1e1e1e;
+                @include sp {
+                    font-size: 2.9rem;
+                    bottom: 0rem;
+                    left: auto;
+                    right: -2rem;
+                }
+            }
+            &__des {
+                font-weight: bold;
+                margin-bottom: 5rem;
+                @include sp {
+                    margin: 4rem 0 3rem;
+                }
+            }
+        }
+        
+    }
+    .news {
+        position: relative;
+        padding: 12rem 0 9.5rem;
+        @include sp {
+            padding:0 2rem 12rem;
+            background-color: #292929;
+        }
+        &-title {
+            position: absolute;
+            top: -11rem;
+            left: 8.3rem;
+            @include big-pc {
+                top: -26rem;
+            }
+            @include sp {
+                left: 0;
+                top: -8rem;
+            }
+            &__main {
+                font-size: 12rem;
+                position: relative;
+                z-index: 2;
+                @include sp {
+                    font-size: 9rem;
+                }
+            }
+            &__main::after {
+                content: 'ニュース';
+                position: absolute;
+                bottom: 5rem;
+                left: 0;
+                font-size: 1.9rem;
+                line-height: 1.2;
+                font-weight: bold;
+                background-color: #1e1e1e;
+                @include sp {
+                    font-size: 2.9rem;
+                    bottom: 1rem;
+                }
+            }
+        }
+        &-content {
+            .news-list {
+                display: flex;
+                gap: 2.8rem;
+                padding-left: 8.3rem;
+                @include sp {
+                    flex-direction: column;
+                    padding-left: 0rem;
+                    padding-top: 7rem;
+                }
+                .news-item {
+                    // width: 31rem;
+                    width: 100%;
+                    &__img {
+                        width: 100%;
+                    }
+                    .news-content {
+                        &__title {
+                            font-size: 1.5rem;
+                            font-weight: bold;
+                            padding: 3.6rem 0rem 2.2rem;
+                            position: relative;
+                            @include sp {
+                                font-size: 1.5rem;
+                            }
+                        }
+                        &__des {
+                            font-size: 1.3rem;
+                            font-weight: normal;
+                            @include sp {
+                                font-size: 1.3rem;
+                            }
+                        }
+                        &__date {
+                            font-size: 1.2rem;
+                            font-weight: bold;
+                            @include sp {
+                                font-size: 1.2rem;
+                            }
+                        }
+                        .tag-orange {
+                            color: #E66A00;
+                        }
+                    }
+                }
+            }
+        }
+        &__btn {
+            margin-top: 6.3rem;
+            z-index: 2;
+            @include big-pc {
+                margin-bottom: 2rem;
+                margin-top: 9rem;
+            }
+        }
+    }
+    .news::after {
+        content: " ";
+        background: url("../images/news-bg2.png") no-repeat center right -80rem/cover;
+        width: 100%;
+        // height: 67rem;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+        width: 100%;
+        height: 67.2rem;
+        @include big-pc {
+            height: 73.2rem;
+        } 
+           
+        
+    }
+    .swiper {
+        width: 100%;
+        z-index: 2;
+        @include big-pc {
+            margin-top: -15rem;
+        }
+    }
+    .swiper-button-prev, 
+    .swiper-button-next {
+        @include sp {
+            display: none;
+        }
+    }
+    .swiper-button-prev::after, 
+    .swiper-button-next::after {
+        color: #fff;
+    }
+    .company {
+        background: url("../images/company-bg.png") no-repeat top/cover;
+        width: 100%;
+        position: relative;
+        text-align: right;
+        padding: 13.9rem 0 8rem;
+        margin-top: -6rem;
+        z-index: 0;
+        @include big-pc {
+            padding: 30rem 0 14.5rem;
+        }
+        @include sp {
+            padding: 5rem 0 8rem;
+            background: url("../images/company-bg.png") no-repeat top right -31rem/cover;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+        }
+        &-title {
+            position: relative;
+            font-size: 12rem;
+            @include sp {
+                font-size: 7rem;
+            }
+        }
+        &-title::after {
+            content: '企業情報';
+            position: absolute;
+            bottom: 4rem;
+            right: 0;
+            font-size: 1.9rem;
+            line-height: 1.2;
+            font-weight: bold;
+            background-color: black;
+            @include sp {
+                font-size: 2.9rem;
+                bottom: 0rem;
+            }
+        }
+        &__des {
+            width: 34.4rem;
+            padding-bottom: 4rem;
+            text-align: left;
+            @include sp {
+                font-size: 1.6rem;
+                width: 100%;
+                padding-top: 4rem;
+            }
+        }
+        &__btn{
+            margin-bottom: 0.9rem;
+            @include sp {
+                margin-bottom: 1.9rem;
+            }
+        }
+        &-contact-btn {
+            margin-top: 10.2rem;
+        }
+        .btn-number {
+            color: #BCBCBC;
+            font-size: 1rem;
+            font-weight: bold;
+            padding-right: 0.9rem;
+            @include sp {
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+}
+
+.footer {
+    position: relative;
+    width: 100%;
+    background-color: black;
+    padding: 8.7rem 9.3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include big-pc {
+        padding: 12rem 21rem;
+    }
+    @include sp {
+        flex-direction: column;
+        padding: 8.7rem 2.5rem 2rem;
+    }
+    .footer-l {
+        position: relative;
+        width: 57%;
+        @include sp {
+            width: 100%;
+        }
+        .footer-l__logo {
+            @include big-pc {
+                width: 42.5rem;
+            }
+        }
+        &__info {
+            padding: 3rem 0rem;
+            font-weight: bold;
+            .comapany-name {
+                font-size: 1.7rem;
+                @include big-pc {
+                    font-size: 2.3rem;
+                }
+            }
+            .company-phone, .company-address {
+                font-size: 1.3rem;
+                @include big-pc {
+                    font-size: 1.7rem;
+                }
+            }
+
+        }
+    }
+    .footer-l::after {
+        content: "© 2024 puerisomnia Co., Ltd.";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: #5A5A5A;
+        @include big-pc {
+            font-size: 1.7rem;
+            bottom: -3rem;
+        }
+        @include sp {
+            content: none;
+        }
+    }
+
+    .footer-logoX {
+        background-color: #1B1B1B;
+        width: 100%;
+        padding: 1.8rem 0;
+        .logoX-img {
+            display: block;
+            width: 4.3rem;
+            height: 4.3rem;
+            margin: 0 auto;
+        }
+    }
+
+    .footer-r {
+        display: flex;
+        width: 43%;
+        @include sp {
+            width: 100%;
+            flex-direction: column;
+            row-gap: 1.9rem;
+            padding: 4.8rem 0 3.9rem;
+        }
+        .item {
+            width: 33.33%;
+            border-left: 1px solid #5A5A5A;
+            padding-left: 2.8rem;
+            @include big-pc {
+                padding-bottom: 6rem;
+            }
+            @include sp {
+                width: 100%;
+                border-left: none;
+                padding-left: 0;
+            }
+            .f-list {
+                font-size: 1.4rem;
+                @include big-pc {
+                    font-size: 1.9rem;
+                }
+                @include sp {
+                    font-size: 1.8rem;
+                }
+                &__item {
+                    position: relative;
+                    @include sp {
+                        border-bottom: 1px solid #5A5A5A;
+                        a {
+                            padding-left: 2.8rem;
+                        }
+                    }
+                }
+                &__item::after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: -1.5rem;
+                    transform: translateY(-50%);
+                    width: 0.6rem;
+                    height: 0.1rem;
+                    background-color: #E66A00;
+                    @include sp {
+                        left: 1rem;
+                    }
+                }
+                &__item:not(:first-child) {
+                    margin-top: 1.9rem;
+                }
+                .i-blur {
+                    color: #5A5A5A;
+                }
+                .branch {
+                    list-style-type: none; /* Loại bỏ kiểu số thứ tự mặc định */
+                    counter-reset: list-counter; /* Khởi tạo bộ đếm */
+                }
+                
+                .branch li {
+                    counter-increment: list-counter; /* Tăng bộ đếm cho mỗi li */
+                }
+                
+                .branch li::before {
+                    color: #5A5A5A;
+                    font-size: 1.3rem;
+                    padding-right: 1rem;
+                    content: counter(list-counter, decimal-leading-zero); /* Định dạng số với số 0 ở đầu */
+                    font-weight: bold; /* Tùy chỉnh kiểu chữ cho số thứ tự nếu muốn */
+                }
+                .logoX-big {
+                    padding-top: 1.1rem;
+                    @include big-pc {
+                        margin: 1.6rem 0 0 1rem;
+                        width: 4.5rem;
+                        height: 4.5rem;
+                    }
+                }
+                .hover-orange:hover {
+                    color: #E66A00;
+                }
+            }
+        }
+
+    }
+}
+
+@include sp {
+    .footer::after {
+        content: "© 2024 puerisomnia Co., Ltd.";
+        position: absolute;
+        bottom: 1.3rem;
+        left: 2.5rem;
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: #5A5A5A;
+    }
+}
