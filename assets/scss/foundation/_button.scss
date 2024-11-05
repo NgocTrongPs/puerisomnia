@@ -266,6 +266,7 @@
     width: 97%;
     height: 42rem;
     font-size: 188px;
+    font-family: "stop", sans-serif;
     position: relative;
     background: transparent;
     @include big-pc {
@@ -507,6 +508,8 @@
     top: 0;
     left: 0;
     opacity: 0;
+    transition-duration: 100ms;
+    transition-delay: 200ms;
     @include sp {
         opacity: 1;
     }
@@ -604,6 +607,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: 0.5s;
 }
 
 .button:hover img {

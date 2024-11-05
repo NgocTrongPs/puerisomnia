@@ -691,6 +691,7 @@ body.fix {
   width: 97%;
   height: 42rem;
   font-size: 188px;
+  font-family: "stop", sans-serif;
   position: relative;
   background: transparent;
 }
@@ -958,6 +959,8 @@ body.fix {
   top: 0;
   left: 0;
   opacity: 0;
+  transition-duration: 100ms;
+  transition-delay: 200ms;
 }
 @media screen and (max-width: 768px) {
   .effect-txt {
@@ -1067,6 +1070,7 @@ body.fix {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: 0.5s;
 }
 
 .button:hover img {
@@ -1187,6 +1191,18 @@ body.fix {
   }
 }
 
+@font-face {
+  font-family: "stop";
+  src: url("../font/stop.ttf") format("truetype");
+}
+@font-face {
+  font-family: "brother1816";
+  src: url("../font/07-brother1816-regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "SourceHanSansJP";
+  src: url("../font/SourceHanSansJP-VF.otf") format("opentype");
+}
 .main-puerisomnia {
   position: relative;
   overflow: hidden;
@@ -1241,7 +1257,7 @@ body.fix {
   position: absolute;
   top: 0;
   right: 0;
-  background: url("../images/intro-bg.png") no-repeat top/cover;
+  background: url("../images/intro-bg.svg") no-repeat top/cover;
   z-index: -1;
   width: 136.6rem;
   height: 107.4rem;
@@ -1258,6 +1274,21 @@ body.fix {
     height: 85rem;
   }
 }
+@media screen and (max-width: 768px) {
+  .main-puerisomnia .bg-main {
+    position: relative;
+  }
+  .main-puerisomnia .bg-main-img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: url("../images/background-main.svg") no-repeat top/cover;
+    height: 446rem;
+    width: 202.8rem;
+    z-index: -1;
+  }
+}
 .main-puerisomnia .container {
   max-width: 104rem;
   padding: 0 2rem;
@@ -1270,7 +1301,7 @@ body.fix {
 }
 .main-puerisomnia .menu-logo {
   position: fixed;
-  top: 5rem;
+  top: 2rem;
   right: 2.5rem;
   z-index: 4;
   width: 6rem;
@@ -1378,6 +1409,12 @@ body.fix {
   padding: 13.5rem 2.5rem 12.5rem;
   transition-duration: 1.5s;
 }
+@media screen and (max-width: 768px) {
+  .main-puerisomnia .menu {
+    padding: 5rem 2.5rem 5rem;
+    transition-duration: 0.8s;
+  }
+}
 .main-puerisomnia .menu-list__item:not(:last-child) {
   border-bottom: 1px solid #5A5A5A;
 }
@@ -1467,6 +1504,7 @@ body.fix {
   right: 2.5rem;
   top: 48rem;
   z-index: 3;
+  font-family: "brother1816", sans-serif;
 }
 @media screen and (min-width: 1920px) {
   .main-puerisomnia .banner-menu {
@@ -1521,6 +1559,7 @@ body.fix {
 .main-puerisomnia .banner__note .note-content {
   position: relative;
   padding: 0.5rem 0rem 1.5rem 8.3rem;
+  display: flex;
   color: #fff;
 }
 @media screen and (min-width: 1920px) {
@@ -1535,6 +1574,7 @@ body.fix {
   }
 }
 .main-puerisomnia .banner__note .note-content .pickup {
+  font-family: "stop", sans-serif;
   position: relative;
   z-index: 1;
   font-size: 1.8rem;
@@ -1560,6 +1600,8 @@ body.fix {
   position: relative;
   z-index: 1;
   font-size: 1.4rem;
+  display: flex;
+  align-items: center;
 }
 @media screen and (min-width: 1920px) {
   .main-puerisomnia .banner__note .note-content .info {
@@ -1581,6 +1623,7 @@ body.fix {
   border-right: 28px solid transparent;
   border-top: 45px solid #BB5804;
   z-index: 0;
+  opacity: 0.8;
 }
 @media screen and (min-width: 1920px) {
   .main-puerisomnia .banner__note .note-content::before {
@@ -1633,7 +1676,7 @@ body.fix {
   left: -3rem;
   width: 28.5rem;
   height: 31rem;
-  background: url("../images/background-top-left.png") no-repeat top/cover;
+  background: url("../images/background-top-left.svg") no-repeat top/cover;
   opacity: 0.5;
 }
 @media screen and (min-width: 1920px) {
@@ -1688,9 +1731,12 @@ body.fix {
 }
 @media screen and (max-width: 768px) {
   .main-puerisomnia .intro {
-    padding: 6rem 0 70rem;
+    padding: 6rem 0 63rem;
     overflow: visible;
   }
+}
+.main-puerisomnia .intro__title {
+  z-index: 1;
 }
 .main-puerisomnia .intro__title .title-img {
   width: 84rem;
@@ -1786,27 +1832,28 @@ body.fix {
   height: 100%;
 }
 .main-puerisomnia .intro::after {
-  content: "";
+  content: "CONCEPT";
+  font-family: "stop", sans-serif;
+  font-size: 27.2rem;
   position: absolute;
-  top: 18.5rem;
-  left: -10rem;
-  width: 35.7rem;
-  height: 115.7rem;
-  background: url("../images/intro-bg2.png") no-repeat top/cover;
-  z-index: 1;
+  top: 50rem;
+  left: -45rem;
+  color: transparent; /* Làm chữ trong suốt */
+  -webkit-text-stroke: 1px white; /* Tạo đường viền màu trắng */
+  transform: rotate(90deg);
+  z-index: 0;
 }
 @media screen and (min-width: 1920px) {
   .main-puerisomnia .intro::after {
-    width: 49.4rem;
-    height: 160.1rem;
+    font-size: 37.2rem;
+    left: -60rem;
   }
 }
 @media screen and (max-width: 768px) {
   .main-puerisomnia .intro::after {
-    top: 13rem;
-    left: -4rem;
-    height: 56.8rem;
-    width: 17.5rem;
+    font-size: 13.2rem;
+    left: -22rem;
+    top: 28rem;
   }
 }
 .main-puerisomnia .service {
@@ -1814,7 +1861,7 @@ body.fix {
 }
 @media screen and (max-width: 768px) {
   .main-puerisomnia .service {
-    padding-bottom: 60rem;
+    padding-bottom: 47rem;
   }
 }
 .main-puerisomnia .service-image {
@@ -1854,6 +1901,7 @@ body.fix {
   }
 }
 .main-puerisomnia .service-doc .service-title {
+  font-family: "stop", sans-serif;
   font-size: 21.4rem;
   line-height: 1;
   position: relative;
@@ -1881,7 +1929,7 @@ body.fix {
 @media screen and (max-width: 768px) {
   .main-puerisomnia .service-doc .service-title::after {
     font-size: 2.9rem;
-    right: -2rem;
+    right: -1rem;
   }
 }
 .main-puerisomnia .service-doc__des {
@@ -1946,6 +1994,7 @@ body.fix {
   }
 }
 .main-puerisomnia .product-doc .product-title {
+  font-family: "stop", sans-serif;
   font-size: 21.4rem;
   position: relative;
   padding-top: 30rem;
@@ -1976,7 +2025,7 @@ body.fix {
     font-size: 2.9rem;
     bottom: 0rem;
     left: auto;
-    right: -2rem;
+    right: -1rem;
   }
 }
 .main-puerisomnia .product-doc__des {
@@ -2010,6 +2059,7 @@ body.fix {
   }
 }
 .main-puerisomnia .news-title__main {
+  font-family: "stop", sans-serif;
   font-size: 12rem;
   position: relative;
   z-index: 2;
@@ -2097,7 +2147,7 @@ body.fix {
 }
 .main-puerisomnia .news::after {
   content: " ";
-  background: url("../images/news-bg2.png") no-repeat center/cover;
+  background: url("../images/news-bg2.svg") no-repeat center/cover;
   width: 100%;
   position: absolute;
   left: 0;
@@ -2105,6 +2155,13 @@ body.fix {
   z-index: 1;
   width: 100%;
   height: 100%;
+}
+@media screen and (max-width: 768px) {
+  .main-puerisomnia .news::after {
+    background: url("../images/news-bg.svg") no-repeat bottom right 90rem/contain;
+    width: 136.6rem;
+    height: 67.2rem;
+  }
 }
 .main-puerisomnia .swiper {
   width: 100%;
@@ -2147,6 +2204,7 @@ body.fix {
 }
 .main-puerisomnia .company-title {
   position: relative;
+  font-family: "stop", sans-serif;
   font-size: 12rem;
 }
 @media screen and (max-width: 768px) {
@@ -2298,7 +2356,6 @@ body.fix {
   .footer .footer-r {
     width: 100%;
     flex-direction: column;
-    row-gap: 1.9rem;
     padding: 4.8rem 0 3.9rem;
   }
 }
@@ -2321,6 +2378,8 @@ body.fix {
 }
 .footer .footer-r .item .f-list {
   font-size: 1.4rem;
+  font-weight: bold;
+  font-family: "SourceHanSansJP", sans-serif;
 }
 @media screen and (min-width: 1920px) {
   .footer .footer-r .item .f-list {
@@ -2338,6 +2397,7 @@ body.fix {
 @media screen and (max-width: 768px) {
   .footer .footer-r .item .f-list__item {
     border-bottom: 1px solid #5A5A5A;
+    padding: 1.6rem 0;
   }
   .footer .footer-r .item .f-list__item a {
     padding-left: 2.8rem;
@@ -2361,6 +2421,11 @@ body.fix {
 .footer .footer-r .item .f-list__item:not(:first-child) {
   margin-top: 1.9rem;
 }
+@media screen and (max-width: 768px) {
+  .footer .footer-r .item .f-list__item:not(:first-child) {
+    margin-top: 0rem;
+  }
+}
 .footer .footer-r .item .f-list .i-blur {
   color: #5A5A5A;
 }
@@ -2379,7 +2444,7 @@ body.fix {
   font-weight: bold; /* Tùy chỉnh kiểu chữ cho số thứ tự nếu muốn */
 }
 .footer .footer-r .item .f-list .logoX-big {
-  padding-top: 1.1rem;
+  margin-top: 1.1rem;
 }
 @media screen and (min-width: 1920px) {
   .footer .footer-r .item .f-list .logoX-big {
@@ -2401,5 +2466,6 @@ body.fix {
     font-size: 1.3rem;
     font-weight: bold;
     color: #5A5A5A;
+    padding-left: 2rem;
   }
 }/*# sourceMappingURL=style.css.map */
