@@ -272,6 +272,9 @@
         height: 57.5rem;
         font-size: 25.8rem;
     }
+    @media screen and (max-width: 1049px ) and (min-width: 769px) { 
+        font-size: 13.5rem;
+    }
     @include sp {
         font-size: 45px;
         height: 12rem;
@@ -541,6 +544,9 @@
     text-align: center;
     @include big-pc {
         font-size: 25.8rem;
+    }
+    @media screen and (max-width: 1049px ) and (min-width: 769px) {
+        font-size: 13.5rem;
     }
     @include sp {
         font-size: 60px;

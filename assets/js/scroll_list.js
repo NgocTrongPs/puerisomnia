@@ -64,3 +64,43 @@ document.addEventListener("DOMContentLoaded", () => {
       observer.observe(section);
   });
 });
+
+//effect for text
+
+function intro_title() {
+  window.addEventListener('scroll', function() {
+    const docTilElements = document.querySelectorAll('.doc-til');
+  
+    docTilElements.forEach((element) => {
+        const rect = element.getBoundingClientRect();
+        const isVisible = rect.top >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight);
+  
+        if (isVisible) {
+            element.classList.add('active');
+            const title = element.querySelector('.title');
+            title.classList.add('active');
+        }
+    });
+  });
+}
+
+window.addEventListener('load', () => {
+  intro_title();
+});
+
+// effect for button
+document.querySelector('.menu-logo').addEventListener('click', function() {
+  const line1 = document.querySelector('.menu-logo__line1');
+  const line2 = document.querySelector('.menu-logo__line2');
+  const menu = document.querySelector('.menu');
+
+  menu.classList.toggle('active');
+
+  line1.classList.toggle('active');
+  line2.classList.toggle('active');
+  line1.classList.toggle('actived');
+  line2.classList.toggle('actived');
+});
+
+
+
