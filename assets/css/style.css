@@ -741,7 +741,7 @@ body.fix {
   content: "";
   background: url("../images/arrow1.svg") no-repeat center/contain;
   top: 50%;
-  right: -20px;
+  right: -40px;
   transform: translateY(-50%);
   width: 20px;
   height: 20px;
@@ -779,7 +779,7 @@ body.fix {
   }
 }
 .btn-5:hover .contact-btn-txt::after {
-  right: -25px;
+  right: -55px;
   transition-duration: 300ms;
 }
 
@@ -972,7 +972,7 @@ body.fix {
   font-size: 19px;
   background-color: black;
   position: absolute;
-  top: 55%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 0px 4px 2px 4px;
@@ -1235,7 +1235,7 @@ body.fix {
   z-index: 0;
   background: url("../images/background-main.png") no-repeat top/cover;
   width: 100%;
-  height: 49%;
+  height: 44.5%;
 }
 @media screen and (max-width: 768px) {
   .main-puerisomnia .puerisomnia-bg {
@@ -1310,7 +1310,7 @@ body.fix {
 }
 @media screen and (min-width: 1920px) {
   .main-puerisomnia .menu-logo {
-    top: 10rem;
+    top: 4rem;
   }
 }
 @media screen and (max-width: 768px) {
@@ -1328,7 +1328,7 @@ body.fix {
   right: 0rem;
   left: 0;
   width: 5rem;
-  height: 0.1rem;
+  height: 0.2rem;
   background-color: #E66A00;
   -webkit-clip-path: inset(0);
   clip-path: inset(0);
@@ -1348,7 +1348,7 @@ body.fix {
   left: 0rem;
   transform: rotate(-15deg);
   width: 5rem;
-  height: 0.1rem;
+  height: 0.2rem;
   background-color: #E66A00;
   -webkit-clip-path: inset(0 0 0 100%);
   clip-path: inset(0 0 0 100%);
@@ -1369,7 +1369,7 @@ body.fix {
   right: 0rem;
   left: 0;
   width: 5rem;
-  height: 0.1rem;
+  height: 0.2rem;
   background-color: #E66A00;
   transition-duration: 0.5s;
 }
@@ -1386,7 +1386,7 @@ body.fix {
   left: 0rem;
   transform: rotate(15deg);
   width: 5rem;
-  height: 0.1rem;
+  height: 0.2rem;
   background-color: #E66A00;
   -webkit-clip-path: inset(0 100% 0 0);
   clip-path: inset(0 100% 0 0);
@@ -1409,6 +1409,16 @@ body.fix {
   padding: 13.5rem 2.5rem 12.5rem;
   transition-duration: 1.5s;
 }
+@keyframes moveOn {
+  0% {
+    transform: translateY(3rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 @media screen and (max-width: 768px) {
   .main-puerisomnia .menu {
     padding: 5rem 2.5rem 5rem;
@@ -1428,6 +1438,12 @@ body.fix {
 .main-puerisomnia .menu-list__item .item_a {
   margin-left: 4rem;
 }
+.main-puerisomnia .menu-list__item .effect-move.active {
+  animation: moveOn 0.8s ease;
+}
+.main-puerisomnia .menu-list__item.active::after {
+  animation: moveOn 0.8s ease;
+}
 .main-puerisomnia .menu-list__item::after {
   content: "";
   position: absolute;
@@ -1437,6 +1453,9 @@ body.fix {
   width: 1rem;
   height: 0.2rem;
   background-color: #E66A00;
+}
+.main-puerisomnia .menu-list__item.active {
+  animation: moveOn 0.8s ease;
 }
 .main-puerisomnia .menu__logoX {
   background-color: #383838;
@@ -1448,6 +1467,9 @@ body.fix {
 .main-puerisomnia .menu__logoX .logoX-img {
   width: 3.8rem;
   height: 3.8rem;
+}
+.main-puerisomnia .menu .lg.active {
+  animation: moveOn 0.8s ease;
 }
 .main-puerisomnia .no-scroll {
   overflow: hidden;
@@ -1478,6 +1500,29 @@ body.fix {
   height: 100%;
   background-color: #1e1e1e;
   z-index: -2;
+}
+.main-puerisomnia .banner__logo {
+  position: absolute;
+  background: url("../images/logo.png") no-repeat center/contain;
+  top: 2rem;
+  left: 2rem;
+  width: 19.7rem;
+  height: 4rem;
+  z-index: 3;
+}
+@media screen and (min-width: 1920px) {
+  .main-puerisomnia .banner__logo {
+    left: 5.5rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .main-puerisomnia .banner__logo {
+    top: 1.5rem;
+    left: 1.5rem;
+    width: 17.6rem;
+    height: 3rem;
+    background: url("../images/logo_sp.png") no-repeat center/contain;
+  }
 }
 .main-puerisomnia .banner__title .title-img {
   position: absolute;
@@ -1548,7 +1593,7 @@ body.fix {
 }
 @media screen and (max-width: 768px) {
   .main-puerisomnia .banner__note {
-    width: 150%;
+    width: 100%;
   }
 }
 @media screen and (max-width: 1049px) and (min-width: 769px) {
@@ -1565,6 +1610,11 @@ body.fix {
 @media screen and (min-width: 1920px) {
   .main-puerisomnia .banner__note .note-content {
     padding: 0.5rem 0rem 0rem 8.3rem;
+  }
+}
+@media screen and (max-width: 965px) and (min-width: 769px) {
+  .main-puerisomnia .banner__note .note-content {
+    padding: 0.5rem 0rem 1.5rem 2.3rem;
   }
 }
 @media screen and (max-width: 768px) {
@@ -1597,36 +1647,90 @@ body.fix {
 .main-puerisomnia .banner__note .note-content .date {
   opacity: 0.7;
 }
+@media screen and (max-width: 768px) {
+  .main-puerisomnia .banner__note .note-content .date {
+    width: 22%;
+  }
+}
+@keyframes slide {
+  0% {
+    transform: translateX(2%); /* Bắt đầu bên ngoài khung nhìn */
+  }
+  10% {
+    transform: translateX(2%); /* Trong khung nhìn */
+  }
+  100% {
+    transform: translateX(-25%); /* Kết thúc ngoài khung nhìn ở bên trái */
+  }
+}
+.main-puerisomnia .banner__note .note-content .info-group {
+  display: flex;
+}
 .main-puerisomnia .banner__note .note-content .info {
-  position: absolute;
-  top: 1rem;
-  left: 20rem;
   z-index: 1;
   font-size: 1.4rem;
   display: flex;
   align-items: center;
-  opacity: 0;
-  transform: translateY(70%);
+  transform: translateX(0);
+  gap: 1rem;
 }
 @media screen and (min-width: 1920px) {
   .main-puerisomnia .banner__note .note-content .info {
     font-size: 1.9rem;
+    gap: 0;
   }
 }
 @media screen and (max-width: 768px) {
   .main-puerisomnia .banner__note .note-content .info {
     font-size: 1.3rem;
+    gap: 0;
+  }
+}
+.main-puerisomnia .banner__note .note-content .info-content {
+  overflow: hidden;
+}
+@media screen and (max-width: 768px) {
+  .main-puerisomnia .banner__note .note-content .info-content {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .main-puerisomnia .banner__note .note-content .info-content__txt {
+    width: 200%;
+    animation: slide 7s linear infinite alternate;
   }
 }
 .main-puerisomnia .banner__note .note-content .info.active {
   opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateX(100%);
+  transition: transform 15s ease;
 }
-.main-puerisomnia .banner__note .note-content .info.hide {
-  opacity: 0;
-  transform: translateY(-70%);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+.main-puerisomnia .banner__note .note-content .note-arrow {
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-right: 13rem;
+  flex: 1;
+}
+@media screen and (max-width: 965px) and (min-width: 769px) {
+  .main-puerisomnia .banner__note .note-content .note-arrow {
+    margin-right: 7rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .main-puerisomnia .banner__note .note-content .note-arrow {
+    background-color: #BB5804;
+    flex: none;
+    margin-right: 1rem;
+  }
+}
+.main-puerisomnia .banner__note .note-content .note-arrow__img {
+  width: 1.1rem;
+  height: 1.3rem;
+  background: url("../images/arrow-white.svg") no-repeat center/contain;
+  z-index: 1;
 }
 .main-puerisomnia .banner__note .note-content::before {
   content: "";
@@ -1648,40 +1752,6 @@ body.fix {
 @media screen and (max-width: 768px) {
   .main-puerisomnia .banner__note .note-content::before {
     content: none;
-  }
-}
-.main-puerisomnia .banner__note .note-content::after {
-  content: "";
-  position: absolute;
-  top: 45%;
-  right: 13rem;
-  transform: translateY(-45%);
-  width: 1.1rem;
-  height: 1.3rem;
-  background: url("../images/arrow-white.svg") no-repeat center/contain;
-  z-index: 1;
-}
-@media screen and (min-width: 1920px) {
-  .main-puerisomnia .banner__note .note-content::after {
-    top: 55%;
-    right: 13rem;
-    transform: translateY(-55%);
-    width: 1.5rem;
-    height: 1.7rem;
-  }
-}
-@media screen and (max-width: 1049px) and (min-width: 769px) {
-  .main-puerisomnia .banner__note .note-content::after {
-    right: 4rem;
-    background-color: #BB5804;
-  }
-}
-@media screen and (max-width: 768px) {
-  .main-puerisomnia .banner__note .note-content::after {
-    right: auto;
-    top: 50%;
-    left: 64%;
-    background-color: #BB5804;
   }
 }
 .main-puerisomnia .banner::before {
@@ -1851,10 +1921,10 @@ body.fix {
   font-family: "stop", sans-serif;
   font-size: 27.2rem;
   position: absolute;
-  top: 50rem;
+  top: 57rem;
   left: -45rem;
   color: transparent; /* Làm chữ trong suốt */
-  -webkit-text-stroke: 1px white; /* Tạo đường viền màu trắng */
+  -webkit-text-stroke: 0.6px white; /* Tạo đường viền màu trắng */
   transform: rotate(90deg);
   z-index: 0;
 }
@@ -1868,7 +1938,7 @@ body.fix {
   .main-puerisomnia .intro::after {
     font-size: 13.2rem;
     left: -22rem;
-    top: 28rem;
+    top: 37rem;
   }
 }
 .main-puerisomnia .service {
@@ -1935,7 +2005,7 @@ body.fix {
   content: "何ができるのか？";
   position: absolute;
   bottom: -2.5rem;
-  right: 0;
+  right: 0.8rem;
   font-size: 5.6rem;
   line-height: 1.2;
   font-weight: bold;
@@ -2029,7 +2099,7 @@ body.fix {
   content: "何ができるのか？";
   position: absolute;
   bottom: 5rem;
-  left: 0;
+  left: 0.7rem;
   font-size: 5.6rem;
   line-height: 1.2;
   font-weight: bold;
@@ -2088,11 +2158,11 @@ body.fix {
   content: "ニュース";
   position: absolute;
   bottom: 5rem;
-  left: 0;
+  left: 0.3rem;
   font-size: 1.9rem;
   line-height: 1.2;
   font-weight: bold;
-  background-color: #1e1e1e;
+  background-color: black;
 }
 @media screen and (max-width: 768px) {
   .main-puerisomnia .news-title__main::after {
@@ -2160,6 +2230,16 @@ body.fix {
     margin-top: 9rem;
   }
 }
+.main-puerisomnia .news-box__shadow {
+  position: absolute;
+  right: 0;
+  top: 49%;
+  transform: translateY(-50%);
+  width: 10rem;
+  height: 94%;
+  box-shadow: inset -52px 0px 84px -33px rgba(255, 255, 255, 0.5);
+  z-index: 4;
+}
 .main-puerisomnia .news::after {
   content: " ";
   background: url("../images/news-bg2.svg") no-repeat center/cover;
@@ -2191,6 +2271,7 @@ body.fix {
 .main-puerisomnia .swiper-button-prev::after,
 .main-puerisomnia .swiper-button-next::after {
   color: #fff;
+  z-index: 5;
 }
 .main-puerisomnia .company {
   background: url("../images/company-bg.png") no-repeat top/cover;
@@ -2295,7 +2376,7 @@ body.fix {
 @media screen and (max-width: 768px) {
   .footer {
     flex-direction: column;
-    padding: 8.7rem 2.5rem 2rem;
+    padding: 1.5rem 2.5rem 2rem;
   }
 }
 .footer .footer-l {
@@ -2310,6 +2391,14 @@ body.fix {
 @media screen and (min-width: 1920px) {
   .footer .footer-l .footer-l__logo {
     width: 42.5rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .footer .footer-l .footer-l__logo {
+    display: block;
+    margin: 0 auto;
+    width: 25.3rem;
+    height: 4.3rem;
   }
 }
 .footer .footer-l__info {
@@ -2478,7 +2567,7 @@ body.fix {
     position: absolute;
     bottom: 1.3rem;
     left: 2.5rem;
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     font-weight: bold;
     color: #5A5A5A;
     padding-left: 2rem;

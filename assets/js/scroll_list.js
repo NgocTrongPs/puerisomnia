@@ -32,41 +32,40 @@ function initSwiper() {
 initSwiper();
 
 // Theo dõi sự thay đổi kích thước màn hình
-window.addEventListener('resize', () => {
-  initSwiper();
-});
-
-
-// effect for menu
 document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll("section");
   const menuLinks = document.querySelectorAll("#menu li a");
 
   const observerOptions = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.5  // Mục tiêu cần xuất hiện ít nhất 50% trong viewport để kích hoạt
+    root: null,
+    rootMargin: "0px",
+    threshold: Array.from(Array(101).keys(), i => i * 0.01) // Để có nhiều điểm mốc xác định diện tích hiển thị
   };
 
-  const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-          const link = document.querySelector(`#menu li a[href="#${entry.target.id}"]`);
+  const sectionVisibility = new Map(); // Để lưu trữ tỷ lệ hiển thị của mỗi section
 
-          if (entry.isIntersecting) {
-            menuLinks.forEach(link => link.classList.remove("active"));
-            link.classList.add("active");
-            console.log(`Added active to: ${link.href}`);
-        }
-      });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      // Cập nhật tỷ lệ hiển thị cho mỗi section
+      sectionVisibility.set(entry.target, entry.intersectionRatio);
+    });
+
+    // Tìm section có tỷ lệ hiển thị lớn nhất
+    const mostVisibleSection = Array.from(sectionVisibility.entries())
+      .reduce((maxEntry, entry) => entry[1] > maxEntry[1] ? entry : maxEntry)[0];
+
+    // Xóa lớp active ở tất cả liên kết và thêm lớp active vào liên kết của section chiếm diện tích lớn nhất
+    menuLinks.forEach(link => link.classList.remove("active"));
+    const activeLink = document.querySelector(`#menu li a[href="#${mostVisibleSection.id}"]`);
+    if (activeLink) activeLink.classList.add("active");
   }, observerOptions);
 
-  sections.forEach(section => {
-      observer.observe(section);
-  });
+  sections.forEach(section => observer.observe(section));
 });
 
-//effect for text
 
+
+//effect for text
 function intro_title() {
   window.addEventListener('scroll', function() {
     const docTilElements = document.querySelectorAll('.doc-til');
@@ -93,40 +92,27 @@ document.querySelector('.menu-logo').addEventListener('click', function() {
   const line1 = document.querySelector('.menu-logo__line1');
   const line2 = document.querySelector('.menu-logo__line2');
   const menu = document.querySelector('.menu');
+  const effect_move = document.querySelectorAll('.effect-move');
+  const list = document.querySelectorAll('.menu-list__item');
+  const lgX = document.querySelector('.lg');
 
   menu.classList.toggle('active');
-
+  // effect_move.forEach((item, index) => {
+  //   setTimeout(() => {
+  //     item.classList.toggle('active');
+  //   }), index * 100;
+  // })
+  // list.forEach((item, index) => {
+  //   setTimeout(() => {
+  //     item.classList.add('active');
+  //   }, index * 300); // Thêm 'active' cho từng phần tử sau mỗi 500ms
+  // });
+  effect_move.forEach(item => item.classList.toggle('active'));
+  list.forEach(item => item.classList.toggle('active'));
+  lgX.classList.toggle('active');
   line1.classList.toggle('active');
   line2.classList.toggle('active');
   line1.classList.toggle('actived');
   line2.classList.toggle('actived');
 });
 
-
-
-document.addEventListener("DOMContentLoaded", function() {
-  const infoElements = document.querySelectorAll(".info");
-  let currentIndex = 0;
-
-  function showNextInfo() {
-      // Ẩn class hiện tại
-      infoElements[currentIndex].classList.add("hide");
-      infoElements[currentIndex].classList.remove("active");
-      
-      // Xác định index kế tiếp, quay về đầu nếu đã đến phần tử cuối cùng
-      test = currentIndex;
-      currentIndex = (currentIndex + 1) % infoElements.length;
-
-      // Hiển thị class kế tiếp
-      infoElements[currentIndex].classList.add("active");
-      setTimeout(function() {
-        infoElements[test].classList.remove("hide");
-      }, 1000);
-  }
-  // Hiển thị phần tử đầu tiên ban đầu
-  infoElements[currentIndex].classList.add("active");
-
-
-  // Thiết lập vòng lặp để hiển thị mỗi class 'info' sau 5 giây
-  setInterval(showNextInfo, 3000);
-});
