@@ -210,7 +210,7 @@
 
 .btn-2::after {
     content: "";
-    background: url("../images/arrow1.png") no-repeat center/contain;
+    background: url("../images/arrow1.svg") no-repeat center/contain;
     top: 50%;
     right: 13px;
     transform: translateY(-50%);
@@ -231,7 +231,7 @@
 }
 .btn-4::after {
     content: "";
-    background: url("../images/arrow1.png") no-repeat center/contain;
+    background: url("../images/arrow1.svg") no-repeat center/contain;
     top: 50%;
     right: 16px;
     transform: translateY(-50%);
@@ -309,7 +309,7 @@
 
 .contact-btn-txt::after {
     content: "";
-    background: url("../images/arrow1.png") no-repeat center/contain;
+    background: url("../images/arrow1.svg") no-repeat center/contain;
     top: 50%;
     right: -20px;
     transform: translateY(-50%);
@@ -328,7 +328,7 @@
 @include sp {
     .text::after {
         content: "";
-        background: url("../images/arrow1.png") no-repeat center/contain;
+        background: url("../images/arrow1.svg") no-repeat center/contain;
         top: 50%;
         right: 190px;
         transform: translateY(-50%);
@@ -592,7 +592,7 @@
     right: 1rem;
     width: 18px;
     height: 19px;
-    background: url("../images/arrow1.png") no-repeat center/contain;
+    background: url("../images/arrow1.svg") no-repeat center/contain;
     @include sp {
         bottom: -5.7rem;
     }

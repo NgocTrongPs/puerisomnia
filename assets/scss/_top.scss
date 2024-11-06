@@ -356,6 +356,7 @@
                     z-index: 1;
                     font-size: 1.8rem;
                     padding-right: 2.1rem;
+                    padding-top: .2rem;
                     @include big-pc {
                         font-size: 2.4rem;
                     }
@@ -371,17 +372,32 @@
                     opacity: 0.7;
                 }
                 .info {
-                    position: relative;
+                    position: absolute;
+                    // top: .8rem;
+                    top: 1rem;
+                    left: 20rem;
                     z-index: 1;
                     font-size: 1.4rem;
                     display: flex;
                     align-items: center;
+                    opacity: 0;
+                    transform: translateY(70%);
                     @include big-pc {
                         font-size: 1.9rem;
                     }
                     @include sp {
                         font-size: 1.3rem;
                     }
+                }
+                .info.active {
+                    opacity: 1 ;
+                    transform: translateY(0) ;
+                    transition: opacity 0.5s ease, transform 0.5s ease;
+                }
+                .info.hide {
+                    opacity: 0;
+                    transform: translateY(-70%);
+                    transition: opacity 0.5s ease, transform 0.5s ease;
                 }
             }
             .note-content::before {

@@ -104,3 +104,29 @@ document.querySelector('.menu-logo').addEventListener('click', function() {
 
 
 
+document.addEventListener("DOMContentLoaded", function() {
+  const infoElements = document.querySelectorAll(".info");
+  let currentIndex = 0;
+
+  function showNextInfo() {
+      // Ẩn class hiện tại
+      infoElements[currentIndex].classList.add("hide");
+      infoElements[currentIndex].classList.remove("active");
+      
+      // Xác định index kế tiếp, quay về đầu nếu đã đến phần tử cuối cùng
+      test = currentIndex;
+      currentIndex = (currentIndex + 1) % infoElements.length;
+
+      // Hiển thị class kế tiếp
+      infoElements[currentIndex].classList.add("active");
+      setTimeout(function() {
+        infoElements[test].classList.remove("hide");
+      }, 1000);
+  }
+  // Hiển thị phần tử đầu tiên ban đầu
+  infoElements[currentIndex].classList.add("active");
+
+
+  // Thiết lập vòng lặp để hiển thị mỗi class 'info' sau 5 giây
+  setInterval(showNextInfo, 3000);
+});
