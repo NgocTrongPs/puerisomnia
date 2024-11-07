@@ -58,7 +58,8 @@
             <section class="intro" id="intro">
                 <div class="container">
                     <div class="intro__title">
-                        <img src="assets/images/intro-title.svg" alt="title" class="title-img">
+                        <img src="assets/images/intro-title.svg" alt="title" class="title-img pc">
+                        <img src="assets/images/intro-title-sp.svg" alt="title" class="title-img sp">
                     </div>
                     <div class="intro__content">
                         <div class="intro-doc">
@@ -109,7 +110,7 @@
                             SERVICE
                         </p>
                         <p class="service-doc__des">
-                            プエリソムニアの提供するサービス内容と、<br>
+                            プエリソムニアの提供するサービス内容と、<br class="pc">
                             導入メリットについて詳しくご説明します。
                         </p>
                         <a href="#" class="button btn-2 btn-right">
@@ -127,8 +128,8 @@
                     <div class="product-doc">
                         <p class="product-title">PRODUCT</p>
                         <p class="product-doc__des">
-                            プエリソムニアの提供するサービス内容と、<br>
-                            導入メリットについて詳しくご説明します。
+                            プエリソムニアの展開するプロダクトと、<br>
+                            関連する情報をご紹介します。
                         </p>
                         <a class="btn-6 ">
                             COMING SOON..
@@ -340,13 +341,14 @@
             </section>
         </div>
         <div class="company">
+            <div class="company-effect" id="company-effect"></div>
             <section id="company">
                 <div class="container">
                     <div class="company-title">COMPANY</div>
                     <p class="company__des">
                         プエリソムニアの企業情報と、関連する情報について詳しくご説明します。
                     </p>
-                    <a href="#" class="button btn-2 company__btn">
+                    <a href="#" class="button btn-2 company__btn btn-pc">
                         <span class="btn-number">01</span>
                         代表紹介
                         <span class="t-l tl"></span>
@@ -354,7 +356,23 @@
                         <span class="b-l bl"></span>
                         <span class="b-r br"></span>
                     </a>
-                    <a href="#" class="button btn-2">
+                    <a href="#" class="button btn-2 btn-pc">
+                        <span class="btn-number">02</span>
+                        会社概要
+                        <span class="t-l tl"></span>
+                        <span class="t-r tr"></span>
+                        <span class="b-l bl"></span>
+                        <span class="b-r br"></span>
+                    </a>
+                    <a href="#" class="button btn-2 company__btn btn-sp">
+                        <span class="btn-number">01</span>
+                        代表挨拶
+                        <span class="t-l tl"></span>
+                        <span class="t-r tr"></span>
+                        <span class="b-l bl"></span>
+                        <span class="b-r br"></span>
+                    </a>
+                    <a href="#" class="button btn-2 btn-sp">
                         <span class="btn-number">02</span>
                         会社概要
                         <span class="t-l tl"></span>
@@ -383,7 +401,11 @@
             <span class="menu-logo__line1"></span>
             <span class="menu-logo__line2"></span>
         </a>
+        <a href="#" class="X-logo">
+            <img class="X-logo__img" src="assets/images/logoX.svg" alt="logoX">
+        </a>
         <div class="menu">
+            <div class="menu__logo-sp"></div>
             <ul class="menu-list">
                 <li class="menu-list__item"><div class="effect-move"><a class="item_a" href="#">TOP</a></div></li>
                 <li class="menu-list__item"><div class="effect-move"><a class="item_a" href="#">私たちの想い</a></div></li>
@@ -429,11 +451,13 @@
                                     <li><a href="#" class="hover-orange">社名の由来</a></li>
                                 </ol>
                             </li>
-                            <li class="f-list__item"><a class="hover-orange" href="#">提供価値</a></li>
+                            <li class="f-list__item pc"><a class="hover-orange" href="#">提供価値</a></li>
+                            <li class="f-list__item sp"><a class="hover-orange" href="#">提供価値/サービス</a></li>
                             <li class="f-list__item i-blur pc"><a href="#">製品情報</a></li>
+                            <li class="f-list__item sp"><a href="#">製品情報</a></li>
                         </ul>
                     </div>
-                    <div class="item">
+                    <div class="item item-border-top">
                         <ul class="f-list">
                             <li class="f-list__item"><a class="hover-orange" href="#">ニュース</a></li>
                             <li class="f-list__item"><a class="hover-orange" href="#">企業情報</a></li>
@@ -446,11 +470,10 @@
                             <li class="f-list__item"><a class="hover-orange" href="#">お問い合わせ</a></li>
                         </ul>
                     </div>
-                    <div class="item">
+                    <div class="item pc">
                         <ul class="f-list">
                             <li class="f-list__item">
                                 <a href="#" class="hover-orange">FOLLOW ON</a>
-                                
                             </li>
                             <li class="pc"><img class="logoX-big" src="assets/images/logoX.svg" alt="logoX"></li>
                         </ul>

@@ -45,6 +45,9 @@
         width: 100%;
         height: 170.4rem;
         background: linear-gradient(180deg, rgba(28,30,31,1) 0%, rgba(36,37,38,0.93) 35%, rgba(50,51,51,0.78) 65%, rgba(78,78,77,0.5) 85%, rgba(129,126,123,0) 100%);
+        @include sp {
+            height: 92.4rem;
+        }
     }
     .layer-bg {
         position: absolute;
@@ -88,16 +91,30 @@
         }
     }
 
+    .X-logo {
+        position: absolute;
+        top: 12rem;
+        right: 3.5rem;
+        &__img {
+            width: 2.3rem;
+            height: 2.3rem;
+            @include big-pc {
+                width: 3.3rem;
+                height: 3.3rem;
+            }
+        }
+    }
     .menu-logo {
         position: fixed;
-        top: 2rem;
-        right: 2.5rem;
+        top: 3rem;
+        right: 1rem;
         z-index: 4;
-        width: 6rem;
-        height: 2rem;
+        width: 9rem;
+        height: 5rem;
         cursor: pointer;
         @include big-pc {
             top: 4rem;
+            right: 3rem;
         }
         @include sp {
             top: 2rem;
@@ -108,15 +125,20 @@
         &__line1::before {
             content: "";
             position: absolute;
-            top: 0.2rem;
+            top: 2.5rem;
             right: 0rem;
-            left: 0;
-            width: 5rem;
+            left: 2rem;
+            width: 5.5rem;
             height: 0.2rem;
             background-color: #E66A00;
             -webkit-clip-path: inset(0);
             clip-path: inset(0);
             transition-duration: .5s;
+            @include big-pc {
+                top: 1.6rem;
+                width: 7.5rem;
+                left: 1rem;
+            }
         }
         &__line1.actived::before {
             transition-duration: .5s;
@@ -126,17 +148,22 @@
         &__line1::after {
             content: "";
             position: absolute;
-            top: 1rem;
+            top: 3rem;
             right: 0rem;
             bottom: 0;
-            left: 0rem;
+            left: 2rem;
             transform: rotate(-15deg);
-            width: 5rem;
+            width: 5.5rem;
             height: 0.2rem;
             background-color: #E66A00;
             -webkit-clip-path: inset(0 0 0 100%);
             clip-path: inset(0 0 0 100%);
             transition-duration: .5s;
+            @include big-pc {
+                top: 2.5rem;
+                width: 7.5rem;
+                left: 1rem;
+            }
         }
         &__line1.active::after {
             transition-duration: .5s;
@@ -149,13 +176,18 @@
         &__line2::before {
             content: "";
             position: absolute;
-            top: 1.8rem;
+            top: 3.4rem;
             right: 0rem;
-            left: 0;
-            width: 5rem;
+            left: 2rem;
+            width: 5.5rem;
             height: 0.2rem;
             background-color: #E66A00;
             transition-duration: .5s;
+            @include big-pc {
+                top: 3.3rem;
+                width: 7.5rem;
+                left: 1rem;
+            }
         }
         &__line2.actived::before {
             width: 0rem;
@@ -164,17 +196,22 @@
         &__line2::after {
             content: "";
             position: absolute;
-            top: 1rem;
+            top: 3rem;
             right: 1.5rem;
             bottom: 0;
-            left: 0rem;
+            left: 2rem;
             transform: rotate(15deg);
-            width: 5rem;
+            width: 5.5rem;
             height: 0.2rem;
             background-color: #E66A00;
             -webkit-clip-path: inset(0 100% 0 0);
             clip-path: inset(0 100% 0 0);
             transition-duration: .5s;
+            @include big-pc {
+                top: 2.5rem;
+                width: 7.5rem;
+                left: 1rem;
+            }
         }
         &__line2.active::after {
             transition-duration: 0.5s;
@@ -193,6 +230,20 @@
         transform: translateX(100vw);
         padding: 13.5rem 2.5rem 12.5rem;
         transition-duration: 1.5s;
+        @include sp {
+            &__logo-sp {
+                position: absolute;
+                top: 1.5rem;
+                left: 3rem;
+                width: 17.6rem;
+                height: 3rem;
+                background: url('../images/logo_sp.png') no-repeat center/contain;
+                
+            }
+            &__logo-sp.active {
+                animation: moveOn .8s ease;
+            }
+        }
         @keyframes moveOn {
             0% {
                 transform: translateY(3rem);
@@ -292,7 +343,8 @@
             height: 4rem;
             z-index: 3;
             @include big-pc {
-                // top: 6.5rem;
+                width: 27.1rem;
+                height: 5.5rem;
                 left: 5.5rem;
             }
             @include sp {
@@ -377,16 +429,19 @@
             position: absolute;
             left: 0;
             bottom: 0;
-            width: 83%;
+            width: 82%;
             @include sp {
                 width: 100%;
+            }
+            @include big-pc {
+                width: 86%;
             }
             @media screen and (max-width: 1049px ) and (min-width: 769px) {
                 width: 88%;
             }
             .note-content {
                 position: relative;
-                padding: 0.5rem 0rem 1.5rem 8.3rem;
+                padding: 0.5rem 0rem 1rem 8.3rem;
                 display: flex;
                 // background-color: #BB5804;
                 @include big-pc {
@@ -412,7 +467,7 @@
                     }
                     @include sp {
                         position: absolute;
-                        top: -2rem;
+                        top: -1.6rem;
                         left: 2rem;
                         font-size: 2.2rem;
 
@@ -421,7 +476,7 @@
                 .date {
                     opacity: 0.7;
                     @include sp {
-                        width: 22%;
+                        width: 24%;
                     }
                 }
                 @keyframes slide {
@@ -524,7 +579,7 @@
         width: 28.5rem;
         height: 31rem;
         background: url("../images/background-top-left.svg") no-repeat top/cover;
-        opacity: 0.5;
+        opacity: 0.8;
         @include big-pc {
             width: 39.2rem;
             height: 42.5rem;
@@ -575,7 +630,7 @@
             overflow: visible;
         }
         @include sp {
-            padding: 6rem 0 63rem;
+            padding: 3rem 0 63rem;
             overflow: visible;
         }
         &__title {
@@ -584,7 +639,6 @@
                 width: 84rem;
                 height: 14.5rem;
                 margin: 0 auto 10.4rem;
-                display: block;
                 @include big-pc {
                     width: 115.5rem;
                     height: 20rem;
@@ -596,7 +650,7 @@
                 }
                 @include sp {
                     width: 32.9rem;
-                    margin-bottom: 5.1rem;
+                    margin-bottom: 1rem;
                 }
             }
         }
@@ -690,7 +744,7 @@
         @include sp {
             font-size: 13.2rem;
             left: -22rem;
-            top: 37rem;
+            top: 30rem;
         }
     }
 
@@ -737,7 +791,9 @@
                     font-size: 15rem;
                 }
                 @include sp {
-                    font-size: 8rem;
+                    width: 130%;
+                    transform: translateX(-7rem);
+                    font-size: 9.5rem;
                 }
             }
             .service-title::after {
@@ -751,7 +807,9 @@
                 background-color: #1e1e1e;
                 @include sp {
                     font-size: 2.9rem;
-                    right: -1rem;
+                    right: 0.5rem;
+                    bottom: -1.5rem;
+                    padding: 0.5rem 0.5rem 0.2rem 0.5rem;
                 }
             }
             &__des {
@@ -759,6 +817,7 @@
                 margin-bottom: 5rem;
                 padding-top: 9.5rem;
                 @include sp {
+                    text-align: left;
                     margin-bottom: 3rem;
                     padding-top: 3.7rem;
                 }
@@ -807,7 +866,6 @@
                 text-align: center;
             }
             .product-title {
-                
                 font-family: "stop", sans-serif;
                 font-size: 21.4rem;
                 position: relative;
@@ -816,12 +874,14 @@
                     font-size: 15rem;
                 }
                 @include sp {
+                    width: 130%;
+                    transform: translateX(-4.5rem);
                     padding-top: 5rem;
-                    font-size: 7rem;
+                    font-size: 9.5rem;
                 }
             }
             .product-title::after {
-                content: '何ができるのか？';
+                content: '何を創るのか？';
                 position: absolute;
                 bottom: 5rem;
                 left: 0.7rem;
@@ -831,9 +891,10 @@
                 background-color: #1e1e1e;
                 @include sp {
                     font-size: 2.9rem;
-                    bottom: 0rem;
+                    bottom: 1.5rem;
                     left: auto;
-                    right: -1rem;
+                    right: 3rem;
+                    padding: 0.5rem 0.5rem 0.2rem 0.5rem;
                 }
             }
             &__des {
@@ -841,6 +902,7 @@
                 margin-bottom: 5rem;
                 @include sp {
                     margin: 4rem 0 3rem;
+                    text-align: left;
                 }
             }
         }
@@ -860,7 +922,8 @@
             left: 8.3rem;
             @include sp {
                 left: 0;
-                top: -8rem;
+                top: -7rem;
+                width: 100%;
             }
             &__main {
                 font-family: "stop", sans-serif;
@@ -869,6 +932,7 @@
                 z-index: 2;
                 @include sp {
                     font-size: 9rem;
+                    width: 100%;
                 }
             }
             &__main::after {
@@ -883,6 +947,8 @@
                 @include sp {
                     font-size: 2.9rem;
                     bottom: 1rem;
+                    right: 0;
+                    left: auto;
                 }
             }
         }
@@ -894,7 +960,7 @@
                 @include sp {
                     flex-direction: column;
                     padding-left: 0rem;
-                    padding-top: 7rem;
+                    padding-top: 8.9rem;
                 }
                 .news-item {
                     // width: 31rem;
@@ -932,6 +998,9 @@
                     }
                 }
             }
+            &__des {
+                padding-bottom: 1rem;
+            }
         }
         &__btn {
             margin-top: 6.3rem;
@@ -942,14 +1011,16 @@
             }
         }
         &-box__shadow {
-            position: absolute;
-            right: 0;
-            top: 49%;
-            transform: translateY(-50%);
-            width: 100%;
-            height: 94%;
-            box-shadow: inset -75px 0px 41px -23px rgba(255, 255, 255, 0.5);
-            z-index: 4;
+            @include pc {
+                position: absolute;
+                right: 0;
+                top: 49%;
+                transform: translateY(-50%);
+                width: 100%;
+                height: 95%;
+                box-shadow: inset -75px 0px 38px -28px rgba(255, 255, 255, 0.1);
+                z-index: 2;
+            }
         }
     }
     .news::after {
@@ -963,7 +1034,7 @@
         width: 100%;
         height: 100%;
         @include sp {
-            background: url("../images/news-bg.svg") no-repeat bottom right 90rem/contain;
+            background: url("../images/news-bg.svg") no-repeat bottom right 95rem/contain;
             width: 136.6rem;
             height: 67.2rem;
         }
@@ -984,13 +1055,14 @@
         z-index: 5;
     }
     .company {
-        background: url("../images/company-bg.png") no-repeat top/cover;
+        // background: url("../images/company-bg.png") no-repeat top/cover;
         width: 100%;
         position: relative;
         text-align: right;
         padding: 13.9rem 0 8rem;
         margin-top: -6rem;
         z-index: 0;
+        transition: transform 0.1s ease-out;
         @include big-pc {
             padding: 30rem 0 14.5rem;
         }
@@ -1008,7 +1080,9 @@
             font-family: "stop", sans-serif;
             font-size: 12rem;
             @include sp {
-                font-size: 7rem;
+                font-size: 8.5rem;
+                width: 125%;
+                transform: translateX(25px);
             }
         }
         &-title::after {
@@ -1022,17 +1096,30 @@
             background-color: black;
             @include sp {
                 font-size: 2.9rem;
-                bottom: 0rem;
+                bottom: 1.5rem;
+                right: 0.7rem;
             }
         }
         &__des {
             width: 34.4rem;
             padding-bottom: 4rem;
             text-align: left;
+            font-weight: bold;
             @include sp {
                 font-size: 1.6rem;
                 width: 100%;
                 padding-top: 4rem;
+            }
+        }
+        .btn-pc {
+            @include sp {
+                display: none;
+            }
+        }
+        .btn-sp {
+            display: none;
+            @include sp {
+                display: flex;
             }
         }
         &__btn{
@@ -1049,10 +1136,25 @@
             font-size: 1rem;
             font-weight: bold;
             padding-right: 0.9rem;
+            letter-spacing: 1px;
             @include sp {
                 font-size: 1.4rem;
             }
         }
+    }
+    .company-effect {
+        background: url("../images/company-bg.png") no-repeat top/cover;
+        width: 100%;
+        height: 130%;
+        position: absolute;
+        text-align: right;
+        padding: 13.9rem 0 8rem;
+        margin-top: -6rem;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: transform 0.1s ease-out;
+        transform: translateY(0);
     }
 
 }
@@ -1095,6 +1197,7 @@
             font-weight: bold;
             .comapany-name {
                 font-size: 1.7rem;
+                padding-bottom: 1rem;
                 @include big-pc {
                     font-size: 2.3rem;
                 }
@@ -1169,12 +1272,11 @@
                 }
                 &__item {
                     position: relative;
-                    
                     @include sp {
-                        border-bottom: 1px solid #5A5A5A;
+
                         padding: 1.6rem 0;
                         a {
-                            padding-left: 2.8rem;
+                            padding-left: 3rem;
                         }
                     }
                 }
@@ -1184,8 +1286,8 @@
                     top: 50%;
                     left: -1.5rem;
                     transform: translateY(-50%);
-                    width: 0.6rem;
-                    height: 0.1rem;
+                    width: 1rem;
+                    height: 0.2rem;
                     background-color: #E66A00;
                     @include sp {
                         left: 1rem;
@@ -1194,6 +1296,7 @@
                 &__item:not(:first-child) {
                     margin-top: 1.9rem;
                     @include sp {
+                        border-top: 1px solid #252525;
                         margin-top: 0rem;
                     }
                 }
@@ -1227,6 +1330,11 @@
                 .hover-orange:hover {
                     color: #E66A00;
                 }
+            }
+        }
+        .item-border-top {
+            @include sp {
+                border-top: 1px solid #252525;
             }
         }
 
