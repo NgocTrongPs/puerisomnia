@@ -103,6 +103,29 @@ document.addEventListener("DOMContentLoaded", () => {
   sections.forEach(section => observer.observe(section));
 });
 
+//add scroll smooth
+document.addEventListener("DOMContentLoaded", () => {
+  const menuLinks = document.querySelectorAll("#menu a");
+  const offset = 80; // Điều chỉnh giá trị này dựa vào chiều cao thanh điều hướng cố định
+
+  menuLinks.forEach(link => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault(); // Ngăn hành vi cuộn mặc định của liên kết
+
+      const targetId = link.getAttribute("href").substring(1); // Lấy id của section
+      const targetSection = document.getElementById(targetId);
+
+      if (targetSection) {
+        // Cuộn đến section với khoảng cách bù để tránh bị che mất phần đầu
+        window.scrollTo({
+          top: targetSection.offsetTop - offset,
+          behavior: "smooth"
+        });
+      }
+    });
+  });
+});
+
 
 
 //effect for text
@@ -138,16 +161,6 @@ document.querySelector('.menu-logo').addEventListener('click', function() {
   const logo_sp = document.querySelector('.menu__logo-sp');
 
   menu.classList.toggle('active');
-  // effect_move.forEach((item, index) => {
-  //   setTimeout(() => {
-  //     item.classList.toggle('active');
-  //   }), index * 100;
-  // })
-  // list.forEach((item, index) => {
-  //   setTimeout(() => {
-  //     item.classList.add('active');
-  //   }, index * 300); // Thêm 'active' cho từng phần tử sau mỗi 500ms
-  // });
   effect_move.forEach(item => item.classList.toggle('active'));
   list.forEach(item => item.classList.toggle('active'));
   logo_sp.classList.toggle('active');
@@ -160,29 +173,7 @@ document.querySelector('.menu-logo').addEventListener('click', function() {
 
 
 
-
-
-
-
-
 ///////////////////effect for background
-
-// (function() {
-//     document.addEventListener("mousemove", parallax);
-//     const elem = document.querySelector("#company-effect");
-
-//     function parallax(e) {
-//         let _w = window.innerWidth/2;
-//         let _h = window.innerHeight/2;
-//         let _mouseX = e.clientX;
-//         let _mouseY = e.clientY;
-//         let _depth1 = `${50 - (_mouseX - _w) * 0.01}% ${50 - (_mouseY - _h) * 0.01}%`;
-//         let _depth2 = `${50 - (_mouseX - _w) * 0.02}% ${50 - (_mouseY - _h) * 0.02}%`;
-//         let _depth3 = `${50 - (_mouseX - _w) * 0.06}% ${50 - (_mouseY - _h) * 0.06}%`;
-//         let x = `${_depth3}, ${_depth2}, ${_depth1}`;
-//         elem.style.backgroundPosition = x;
-//     }
-// })();
 
 document.addEventListener("DOMContentLoaded", () => {
   const companySection = document.getElementById("company-effect");
@@ -209,9 +200,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // Hàm hiệu ứng parallax, cập nhật liên tục theo vị trí cuộn
   function parallaxEffect() {
     const sectionTop = companySection.getBoundingClientRect().top; // Lấy vị trí hiện tại của section
-    const offset = sectionTop * 0.1; // Tính toán offset cho hiệu ứng parallax
-    companySection.style.transform = `translateY(${offset}px)`;
+    const offset = sectionTop * 0.2; // Tính toán offset cho hiệu ứng parallax
+    companySection.style.transform = `translateY(${-offset}px)`;
   }
 });
 
 
+window.addEventListener('load', () => {
+  const moveFromLeft = document.querySelector('.title-img');
+  moveFromLeft.classList.add('active');
+});

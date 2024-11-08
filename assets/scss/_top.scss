@@ -1,4 +1,6 @@
+
 .main-puerisomnia {
+    scroll-padding-top: 80px;
     position: relative;
     overflow: hidden;
     .banner-menu .menu-list .menu-item a.active {
@@ -12,6 +14,15 @@
         -webkit-clip-path: inset(0);
         clip-path: inset(0);
         transform: all .4s ease;
+    }
+    .puerisomnia_blur_top {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 13.4rem;
+        background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.82) 2%, rgba(0,0,0,0.3) 20%, rgba(0,0,0,0) 94%, rgba(0,0,0,0) 100%);
+        z-index: 1;
     }
 
     .grey-bg {
@@ -33,7 +44,7 @@
         height: 44.5%;
         @include sp {
             width: 130%;
-            left: -10rem;
+            left: -11rem;
             height: 18.5%;
         }
     }
@@ -46,7 +57,7 @@
         height: 170.4rem;
         background: linear-gradient(180deg, rgba(28,30,31,1) 0%, rgba(36,37,38,0.93) 35%, rgba(50,51,51,0.78) 65%, rgba(78,78,77,0.5) 85%, rgba(129,126,123,0) 100%);
         @include sp {
-            height: 92.4rem;
+            height: 109.4rem;
         }
     }
     .layer-bg {
@@ -62,8 +73,9 @@
             width: 192rem;
         }
         @include sp {
-            width: 100%;
-            height: 85rem;
+            width: 110%;
+            height: 63rem;
+            top: 18.5rem;
         }
     }
     @include sp {
@@ -117,7 +129,7 @@
             right: 3rem;
         }
         @include sp {
-            top: 2rem;
+            top: 0rem;
         }
         &__line1 {
             position: relative;
@@ -135,7 +147,7 @@
             clip-path: inset(0);
             transition-duration: .5s;
             @include big-pc {
-                top: 1.6rem;
+                top: 2rem;
                 width: 7.5rem;
                 left: 1rem;
             }
@@ -356,10 +368,26 @@
             }
         }
         &__title {
+            .elip_blur {
+                position: absolute;
+                left: 14.4rem;
+                bottom: 18rem;
+                height: 0rem;
+                width: 0rem;
+                border-radius: 50%;
+                background-color: rgb(0 0 0);
+                z-index: 0;
+                box-shadow: 2px 1px 224px 39px rgba(0,0,0,1);
+                -webkit-box-shadow: 2px 1px 224px 39px rgba(0,0,0,1);
+                -moz-box-shadow: 2px 1px 224px 39px rgba(0,0,0,1);
+            }
             .title-img {
                 position: absolute;
                 left: 8.5rem;
                 bottom: 11.7rem;
+                -webkit-clip-path: inset(0 100% 0 0);
+                clip-path: inset(0 100% 0 0);
+                transition-duration: 1s;
                 @include big-pc {
                     left: 13.5rem;
                     width: 87.7rem;
@@ -371,6 +399,11 @@
                     width: 32.5rem;
                     height: 12.2rem;
                 }
+            }
+            .title-img.active {
+                transition-duration: 1s;
+                -webkit-clip-path: inset(0);
+                clip-path: inset(0);
             }
         }
 
@@ -394,7 +427,6 @@
                     position: relative;
                     &__line {
                         position: relative;
-
                     }
                     &__line::after {
                         content: "";
@@ -403,7 +435,7 @@
                         right: -1.5rem;
                         transform: translateY(-50%);
                         width: 0.6rem;
-                        height: 0.1rem;
+                        height: 0.2rem;
                         background-color: #E66A00;
                     }
 
@@ -421,6 +453,9 @@
                     // height: 0.1rem;
                     // background-color: #E66A00;
                 // }
+                .menu-item:hover {
+                    color: #CFE600;
+                }
                 
             }
 
@@ -580,6 +615,7 @@
         height: 31rem;
         background: url("../images/background-top-left.svg") no-repeat top/cover;
         opacity: 0.8;
+        z-index: 2;
         @include big-pc {
             width: 39.2rem;
             height: 42.5rem;
@@ -587,6 +623,18 @@
         @include sp {
             width: 20rem;
             height: 21rem;
+        }
+    }
+    .banner::after {
+
+        @include sp {
+            content: '';
+            background: url('../images/net_bg_sp.svg') no-repeat top/cover;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
     }
 
@@ -1014,11 +1062,12 @@
             @include pc {
                 position: absolute;
                 right: 0;
-                top: 49%;
+                top: 49.5%;
                 transform: translateY(-50%);
-                width: 100%;
-                height: 95%;
-                box-shadow: inset -75px 0px 38px -28px rgba(255, 255, 255, 0.1);
+                width: 15.5rem;
+                height: 94.5%;
+                // box-shadow: inset -75px 0px 38px -28px rgba(255, 255, 255, 0.1);
+                background: linear-gradient(-90deg, rgba(60,60,60,1) 0%, rgba(60,60,60,0.88) 20%, rgba(60,60,60,0.68) 30%, rgba(255,255,255,0) 100%);
                 z-index: 2;
             }
         }
@@ -1148,8 +1197,7 @@
         height: 130%;
         position: absolute;
         text-align: right;
-        padding: 13.9rem 0 8rem;
-        margin-top: -6rem;
+        margin-top: -10rem;
         top: 0;
         left: 0;
         z-index: -1;
