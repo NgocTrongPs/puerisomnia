@@ -175,8 +175,37 @@ document.querySelector('.menu-logo').addEventListener('click', function() {
 
 ///////////////////effect for background
 
+// document.addEventListener("DOMContentLoaded", () => {
+//   const companySection = document.getElementById("company-effect");
+
+//   if (companySection) {
+//     const observer = new IntersectionObserver((entries) => {
+//       entries.forEach(entry => {
+//         if (entry.isIntersecting) {
+//           // Thêm sự kiện scroll khi phần tử vào view
+//           window.addEventListener("scroll", parallaxEffect);
+//         } else {
+//           // Ngừng lắng nghe sự kiện cuộn khi phần tử ra khỏi màn hình
+//           window.removeEventListener("scroll", parallaxEffect);
+//         }
+//       });
+//     }, { threshold: 0.1 }); // Ngưỡng để kích hoạt khi phần tử vào view 10%
+
+//     // Bắt đầu quan sát phần tử "company"
+//     observer.observe(companySection);
+//   } else {
+//     console.error("Element with ID 'company' not found.");
+//   }
+
+//   // Hàm hiệu ứng parallax, cập nhật liên tục theo vị trí cuộn
+//   function parallaxEffect() {
+//     const sectionTop = companySection.getBoundingClientRect().top; // Lấy vị trí hiện tại của section
+//     const offset = sectionTop * 0.2; // Tính toán offset cho hiệu ứng parallax
+//     companySection.style.transform = `translateY(${-offset}px)`;
+//   }
+// });
 document.addEventListener("DOMContentLoaded", () => {
-  const companySection = document.getElementById("company-effect");
+  const companySection = document.querySelector(".company");
 
   if (companySection) {
     const observer = new IntersectionObserver((entries) => {
@@ -197,13 +226,16 @@ document.addEventListener("DOMContentLoaded", () => {
     console.error("Element with ID 'company' not found.");
   }
 
-  // Hàm hiệu ứng parallax, cập nhật liên tục theo vị trí cuộn
+  // Hàm hiệu ứng parallax, thay đổi background-position khi cuộn
   function parallaxEffect() {
     const sectionTop = companySection.getBoundingClientRect().top; // Lấy vị trí hiện tại của section
     const offset = sectionTop * 0.2; // Tính toán offset cho hiệu ứng parallax
-    companySection.style.transform = `translateY(${-offset}px)`;
+
+    // Thay đổi background-position của thẻ cha
+    companySection.style.backgroundPosition = `0 ${13 - offset}px`; // Điều chỉnh vị trí background theo cuộn
   }
 });
+
 
 
 window.addEventListener('load', () => {
